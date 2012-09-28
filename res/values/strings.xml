@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">InBed</string>
+    <string name="activate_service">Activate Service</string>
+    <string name="deactivate_service">Deactivate Service</string>
+    <string name="startButton">Start</string>
+    <string name="stopButton">Stop</string>
+
+    <!-- Dialog boxes -->
+    <string name="alert_values_title">Values incorrect</string>
+    <string name="alert_values_message">Do you want to edit the values or go back without saving?</string>
+    <string name="alert_values_btn_edit">Edit</string>
+    <string name="alert_values_btn_back">Go Back</string>
+    <string name="alert_sensors_orientation_not_available">The orientation sensor does not seem to be present.</string>
+    <string name="alert_sensors_orientation_title">Orientation sensor not present</string>
+
+    <!-- Notification -->
+    <string name="inbed_service_started">InBed is enabled.</string>
+    <string name="inbed_service_label">InBed</string>
+</resources>
