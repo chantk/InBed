@@ -1,30 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical"
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
-	<TextView android:layout_width="fill_parent" 
+	      android:layout_width="match_parent"
+	      android:layout_height="match_parent"
+	      android:orientation="vertical">
+  <TextView android:id="@+id/main_title"
+	    android:layout_width="fill_parent" 
 	    android:layout_height="wrap_content" 
 	    android:text="InBed"/>
-    	<CheckBox android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:id="@+id/onOffCheckBox"
-		android:text="Turn on InBed"/>
-	<TextView android:id="@+id/start_timeDisplay"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text=""/>
-	<Button android:id="@+id/pick_start_time"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="Set start time"/>
-	<TextView android:id="@+id/stop_timeDisplay"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text=""/>
-	<Button android:id="@+id/pick_stop_time"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="Set stop time"/>
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="horizontal">
+    <TextView android:id="@+id/mainswitch_text"
+	      android:layout_weight="1"
+	      android:layout_height="wrap_content"
+	      android:hint="@string/mainswitch_message" />
+    <ToggleButton android:id="@+id/main_togglebutton"
+		  android:layout_height="wrap_content"
+		  android:layout_weight="1"
+		  android:layout_width="0dp"
+		  android:textOn="@string/main_toggle_on"
+		  android:textOff="@string/main_toggle_off"
+		  android:onClick="onToggleClicked"/>
+  </LinearLayout>
 </LinearLayout>
 

@@ -6,6 +6,12 @@
     <string name="startButton">Start</string>
     <string name="stopButton">Stop</string>
 
+    <string name="main_toggle_on">Bedtime Reading on</string>
+    <string name="main_toggle_off">Bedtime Reading off</string>
+
+    <string name="mainswitch_message">Enable"</string>
+
+
     <!-- Dialog boxes -->
     <string name="alert_values_title">Values incorrect</string>
     <string name="alert_values_message">Do you want to edit the values or go back without saving?</string>

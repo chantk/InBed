@@ -37,18 +37,21 @@ public class InBedService extends Service implements SensorEventListener {
 
     @Override
     public IBinder onBind(Intent intent) {
-        return null;
+        return intent;
     }
 
     @Override
     public void onCreate() {
-        //Toast.makeText(this, "InBed Service Created", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "InBed Service Created", Toast.LENGTH_LONG).show();
         Log.d(TAG, "onCreate");
 
         sm = (SensorManager)getSystemService(SENSOR_SERVICE);
 	
 	// Enable auto-rotate initially. Otherwise there is no point in using InBed.
 	Settings.System.putInt(getContentResolver(), ROTATION, ROTATION_ENABLED);
+	mNM = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+	showNotification();
+
 	/*
 	try {
 	    userPreference = Settings.System.getInt(getContentResolver(), ROTATION);
@@ -88,10 +91,9 @@ public class InBedService extends Service implements SensorEventListener {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Toast.makeText(this, "InBed Service Started", Toast.LENGTH_LONG).show();
         Log.d(TAG, "onStartCommand");
 	Log.i("InBedService", "Received start id " + startId + ": " + intent);
-
+p
 	List<Sensor> sensors = sm.getSensorList(Sensor.TYPE_ORIENTATION);
 	if (sensors.size() > 0) {
 	    sensor = sensors.get(0);
@@ -100,8 +102,6 @@ public class InBedService extends Service implements SensorEventListener {
 			//SensorManager.SENSOR_DELAY_NORMAL);
 	}
 
-	mNM = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-	showNotification();
 	return START_STICKY;
     }
 
