@@ -36,12 +36,12 @@ public class InBed extends Activity {
 
     //Button startButton, stopButton;
     private TextView mStartTimeDisplay, mStopTimeDisplay;
-    private Button mPickTime;
+    //    private Button mPickTime;
 
-    private int mHour;
-    private int mMinute;
+    //    private int mHour;
+    //    private int mMinute;
 
-    static final int TIME_DIALOG_ID = 0;
+    //    static final int TIME_DIALOG_ID = 0;
 
 
     /** Called when the activity is first created. */ 

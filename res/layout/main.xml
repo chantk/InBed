@@ -14,6 +14,7 @@
     <TextView android:id="@+id/mainswitch_text"
 	      android:layout_weight="1"
 	      android:layout_height="wrap_content"
+	      android:layout_width="2dp"
 	      android:hint="@string/mainswitch_message" />
     <ToggleButton android:id="@+id/main_togglebutton"
 		  android:layout_height="wrap_content"
