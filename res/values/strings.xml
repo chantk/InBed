@@ -6,10 +6,10 @@
     <string name="startButton">Start</string>
     <string name="stopButton">Stop</string>
 
-    <string name="main_toggle_on">Bedtime Reading on</string>
-    <string name="main_toggle_off">Bedtime Reading off</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
 
-    <string name="mainswitch_message">Enable"</string>
+    <string name="mainswitch_message">Enable InBed"</string>
 
 
     <!-- Dialog boxes -->

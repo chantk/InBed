@@ -42,7 +42,7 @@ public class InBedService extends Service implements SensorEventListener {
 
     @Override
     public void onCreate() {
-        Toast.makeText(this, "InBed Service Created", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "InBed Service Created onCreate()", Toast.LENGTH_LONG).show();
         Log.d(TAG, "onCreate");
 
         sm = (SensorManager)getSystemService(SENSOR_SERVICE);
@@ -80,7 +80,7 @@ public class InBedService extends Service implements SensorEventListener {
 
     @Override
     public void onDestroy() { 
-        Toast.makeText(this, "InBed Service Stopped", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "InBed Service onDestroy", Toast.LENGTH_LONG).show();
         Log.d(TAG, "onDestroy");
         sm.unregisterListener(this);
 	Settings.System.putInt(getContentResolver(), ROTATION, ROTATION_ENABLED);
@@ -89,6 +89,7 @@ public class InBedService extends Service implements SensorEventListener {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        Toast.makeText(this, "InBed Service onStartCommand()", Toast.LENGTH_LONG).show();
         Log.d(TAG, "onStartCommand");
 	Log.i("InBedService", "Received start id " + startId + ": " + intent);
 

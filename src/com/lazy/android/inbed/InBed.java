@@ -20,7 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ToggleButton;
+import android.widget.Switch;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -58,7 +58,7 @@ public class InBed extends Activity {
 
     public void onToggleClicked(View view) {
 	// Is the toggle on?
-	boolean on = ((ToggleButton) view).isChecked();
+	boolean on = ((Switch) view).isChecked();
 
 	if (on) {
 	    // Enable the service
