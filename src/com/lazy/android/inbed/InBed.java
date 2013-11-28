@@ -34,8 +34,10 @@ public class InBed extends Activity {
 //    private static final int MODE_LANDSCAPE = 1;
 //    private static final String ROTATION = "ACCELEROMETER_ROTATION";
 
+    private Intent intent;
+
     //Button startButton, stopButton;
-    private TextView mStartTimeDisplay, mStopTimeDisplay;
+    //    private TextView mStartTimeDisplay, mStopTimeDisplay;
     //    private Button mPickTime;
 
     //    private int mHour;
@@ -68,7 +70,6 @@ public class InBed extends Activity {
 	    
 	} else {
 	    // Disable the service
-	    Intent intent = new Intent(this, InBedService.class);
 	    stopService(intent);
 	}
     }
@@ -81,8 +82,8 @@ public class InBed extends Activity {
 	
 	AlarmManager mgr = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
 	*/
-	Intent i = new Intent(this, InBedService.class);
-	PendingIntent pi = PendingIntent.getService(this, 0, i, 0);
+	intent = new Intent(this, InBedService.class);
+	PendingIntent pi = PendingIntent.getService(this, 0, intent, 0);
 
 	/*	Time mStartTime = new Time();
 	mStartTime.hour = mHour;
