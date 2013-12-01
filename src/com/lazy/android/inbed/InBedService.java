@@ -14,6 +14,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.IBinder;
+import android.os.Binder;
 import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
@@ -21,7 +22,7 @@ import android.widget.Toast;
 import java.util.List;
 
 public class InBedService extends Service implements SensorEventListener {
-        //extends BroadcastReceiver {
+    //extends BroadcastReceiver {
     private static final String TAG = "InBedService";
     private static final String ROTATION = Settings.System.ACCELEROMETER_ROTATION;
     private static final int ROTATION_ENABLED = 1;
@@ -32,12 +33,24 @@ public class InBedService extends Service implements SensorEventListener {
 
     private static SensorManager sm;
     private static Sensor sensor;
+
+    // Reference to the service
+    private InBedService serviceRef;
+
+    private final IBinder binder = new MyBinder();
+
     //private static int userPreference;
     NotificationManager mNM;
 
     @Override
     public IBinder onBind(Intent intent) {
-        return null;
+        return binder;
+    }
+
+    public class MyBinder extends Binder {
+	InBedService getService() {
+	    return InBedService.this;
+	}
     }
 
     @Override
